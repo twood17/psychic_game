@@ -1,5 +1,4 @@
 var computer_choices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-
 var wins = 0;
 var losses = 0;
 var guesses = 9;
@@ -16,22 +15,22 @@ document.onkeyup = function (event) {
             guesses = 9;
             guess_choice = [];
         } else {
-            guesses --;
+            guesses--;
             guess_choice.push(player_choice);
         }
-        
+
         if (guesses === 0) {
             guesses = 9
-            losses++;            
+            losses++;
             guess_choice = [];
         }
-        var refresh = 
-        "<h1>The Psychic Game</h1>" +
-        "<h3>Guess what letter I am thinking!</h3>" +
-        "<p>Wins:" + wins +"</p>" +
-        "<p>Losses:" + losses + "</p>" +
-        "<p>Guesses left:" + guesses + "</p>" +
-        "<p>Your guesses so far:" + guess_choice.join(", ") + "</p>";
+        var refresh =
+            "<h1>The Psychic Game</h1>" +
+            "<h3>Guess what letter I am thinking!</h3>" +
+            "<p>Wins: " + wins + "</p>" +
+            "<p>Losses: " + losses + "</p>" +
+            "<p>Guesses left: " + guesses + "</p>" +
+            "<p>Your guesses so far: " + guess_choice.join(", ") + "</p>";
 
         document.querySelector("#refresh").innerHTML = refresh;
     }
